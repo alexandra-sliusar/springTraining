@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--bean id="messageProvider"
+          class="chapter3.message.HelloWorldMessageProvider"/-->
+
+    <bean id="messageProvider" class="chapter3.message.ConfigurableMessageProvider">
+        <!--Constructor injection-->
+        <constructor-arg value="Configured string from XML"/>
+    </bean>
+
+    <bean id="messageRenderer"
+          class="chapter3.message.StandardOutMessageRenderer">
+        <!--Setter injection-->
+        <property name="messageProvider" ref="messageProvider"/>
+    </bean>
+
+</beans>
