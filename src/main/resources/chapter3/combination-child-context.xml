@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="simple1" class="chapter3.combinationOfXmls.SimpleClass">
+        <property name="value" ref="firstString"/>
+    </bean>
+
+    <bean id="simple2" class="chapter3.combinationOfXmls.SimpleClass">
+        <property name="value" ref="secondString"/>
+    </bean>
+
+    <bean id="simple3" class="chapter3.combinationOfXmls.SimpleClass">
+        <property name="value">
+            <ref parent="firstString"/>
+        </property>
+    </bean>
+
+    <bean id="firstString" class="java.lang.String">
+        <constructor-arg>
+            <value>Bean in child</value>
+        </constructor-arg>
+    </bean>
+</beans>

@@ -1,6 +1,5 @@
-package chapter3;
+package chapter3.message;
 
-import chapter3.message.MessageRenderer;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 /**

@@ -1,4 +1,4 @@
-package chapter3;
+package chapter3.beanFactory;
 
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;

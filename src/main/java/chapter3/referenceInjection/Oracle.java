@@ -1,4 +1,4 @@
-package chapter3;
+package chapter3.referenceInjection;
 
 /**
  * Created by Oleksandra_Sliusar on 21-Sep-17.

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="randomRefBean"
+          class="chapter3.beanFactory.BookwormOracle"/>
+    <!-- standard way -->
+    <bean id="collectionKeeper"
+          class="chapter3.collectionsInjection.CollectionKeeper">
+        <property name="map">
+            <map>
+                <entry key="someValue">
+                    <value>Hello World!</value>
+                </entry>
+                <entry key="someBean">
+                    <ref bean="randomRefBean"/>
+                </entry>
+                <entry key="number">
+                    <value type="java.lang.Integer">93</value>
+                </entry>
+            </map>
+        </property>
+
+        <property name="list">
+            <list>
+                <value>Hello World!</value>
+                <ref bean="randomRefBean"/>
+            </list>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="firstName">Chris</prop>
+                <prop key="secondName">Schaefer</prop>
+            </props>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>Hello World 1</value>
+                <ref bean="randomRefBean"/>
+            </set>
+        </property>
+    </bean>
+
+    <!-- annotation way -->
+    <context:annotation-config/>
+    <context:component-scan
+            base-package="chapter3.collectionsInjection"/>
+    <util:map id="map" map-class="java.util.HashMap">
+        <entry key="someValue">
+            <value>Hello World from Anno!</value>
+        </entry>
+        <entry key="someBean">
+            <ref bean="randomRefBean"/>
+        </entry>
+    </util:map>
+
+    <util:properties id="properties">
+        <prop key="firstName">Anne</prop>
+        <prop key="middleName">Caitlin</prop>
+        <prop key="secondName">Hall</prop>
+    </util:properties>
+
+    <util:set id="set">
+        <value>Hello World from Anno!</value>
+        <ref bean="randomRefBean"/>
+    </util:set>
+
+    <util:list id="list">
+        <value>Hello World from Anno!</value>
+        <ref bean="randomRefBean"/>
+    </util:list>
+
+</beans>

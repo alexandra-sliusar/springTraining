@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--What constructor should be used-->
+    <!--bean id="constructorConfusion" class="chapter3.ConstructorConfusion">
+        <constructor-arg>
+            <value>90</value>
+        </constructor-arg>
+    </bean-->
+
+    <!--Get needed bean
+    With annotations @Autowired and @Value you`re choosing constructor to be used by yourself-->
+    <bean id="constructorConfusion" class="chapter3.constructorConfusion.ConstructorConfusion">
+        <constructor-arg type="int">
+            <value>90</value>
+        </constructor-arg>
+    </bean>
+</beans>
