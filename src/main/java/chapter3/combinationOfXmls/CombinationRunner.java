@@ -8,11 +8,11 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class CombinationRunner {
     public static void main(String[] args) {
         GenericXmlApplicationContext parentContext = new GenericXmlApplicationContext();
-        parentContext.load("chapter3/combination-parent-context.xml");
+        parentContext.load("chapter3/combinationOfXmls/combination-parent-context.xml");
         parentContext.refresh();
 
         GenericXmlApplicationContext childContext = new GenericXmlApplicationContext();
-        childContext.load("chapter3/combination-child-context.xml");
+        childContext.load("chapter3/combinationOfXmls/combination-child-context.xml");
         childContext.setParent(parentContext);
         childContext.refresh();
 

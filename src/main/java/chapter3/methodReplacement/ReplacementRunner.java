@@ -9,7 +9,7 @@ import org.springframework.util.StopWatch;
 public class ReplacementRunner {
     public static void main(String[] args) {
         GenericXmlApplicationContext context = new GenericXmlApplicationContext();
-        context.load("chapter3/method-replacement-context.xml");
+        context.load("chapter3/methodReplacement/method-replacement-context.xml");
         context.refresh();
 
         ReplacementTarget replacementTarget = (ReplacementTarget) context.getBean("replacementTarget");

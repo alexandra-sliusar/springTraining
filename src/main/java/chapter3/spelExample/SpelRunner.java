@@ -9,7 +9,7 @@ public class SpelRunner {
     public static void main(String[] args) {
         GenericXmlApplicationContext ctx =
                 new GenericXmlApplicationContext();
-        ctx.load("chapter3/spel-example-context.xml");
+        ctx.load("chapter3/spelExample/spel-example-context.xml");
         ctx.refresh();
 
         InjectSimpleSpel simple =

@@ -8,7 +8,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class ReferenceRunner {
     public static void main(String[] args) {
         GenericXmlApplicationContext context = new GenericXmlApplicationContext();
-        context.load("chapter3/reference-injection-context.xml");
+        context.load("chapter3/referenceInjection/reference-injection-context.xml");
         context.refresh();
 
         Keeper keeper = (Keeper) context.getBean("keeper");

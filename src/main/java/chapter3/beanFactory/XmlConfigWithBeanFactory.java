@@ -13,7 +13,7 @@ public class XmlConfigWithBeanFactory {
         //in plain situation better to use applicationContext
         DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader rdr = new XmlBeanDefinitionReader(factory);
-        rdr.loadBeanDefinitions(new ClassPathResource("chapter3/bean-factory-config.xml"));
+        rdr.loadBeanDefinitions(new ClassPathResource("chapter3/beanFactory/bean-factory-config.xml"));
 
         Oracle oracle = (Oracle) factory.getBean("oracle");
         System.out.println(oracle.defineMeaningOfLife());

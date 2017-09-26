@@ -9,7 +9,7 @@ import org.springframework.util.StopWatch;
 public class LookupRunner {
     public static void main(String[] args) {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("chapter3/lookup-method-context.xml");
+        ctx.load("chapter3/lookupMethodInjection/lookup-method-context.xml");
         ctx.refresh();
         DemoBean abstractBean = (DemoBean) ctx.getBean("abstractLookupBean");
         DemoBean standardBean = (DemoBean) ctx.getBean("standardLookupBean");

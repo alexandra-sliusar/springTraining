@@ -9,7 +9,7 @@ public class NamingRunner {
 
     public static void main(String[] args) {
         GenericXmlApplicationContext context = new GenericXmlApplicationContext();
-        context.load("chapter3/bean-naming-context.xml");
+        context.load("chapter3/beanNaming/bean-naming-context.xml");
         context.refresh();
 
         String s1 = (String) context.getBean("name1");

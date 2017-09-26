@@ -8,7 +8,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class CollectionRunner {
     public static void main(String[] args) {
         GenericXmlApplicationContext context = new GenericXmlApplicationContext();
-        context.load("chapter3/collections-injection-context.xml");
+        context.load("chapter3/collectionsInjection/collections-injection-context.xml");
         context.refresh();
         //CollectionKeeper keeper = (CollectionKeeper) context.getBean("collectionKeeper");
         //keeper.displayInfo();
