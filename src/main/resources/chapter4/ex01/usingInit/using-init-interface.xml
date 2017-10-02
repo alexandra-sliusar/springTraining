@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <bean id="simpleBeanl"
+          class="chapter4.ex01.usingInit.SimpleBeanWithInterface">
+        <property name="name" value="Anne Hall"/>
+        <property name="age" value="24"/>
+    </bean>
+
+    <bean id="simpleBean2"
+          class="chapter4.ex01.usingInit.SimpleBeanWithInterface">
+        <property name="age" value="25"/>
+    </bean>
+
+    <bean id="simpleBean3"
+          class="chapter4.ex01.usingInit.SimpleBeanWithInterface">
+        <property name="name" value="Anne Hall"/>
+    </bean>
+</beans>
