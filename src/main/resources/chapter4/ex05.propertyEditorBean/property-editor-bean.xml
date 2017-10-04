@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+       default-lazy-init="true">
+
+    <bean id="customEditorConfigurer"
+          class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="propertyEditorRegistrars" ref="propertyEditorRegistrarsList"/>
+    </bean>
+
+    <util:list id="propertyEditorRegistrarsList">
+        <bean class="chapter4.ex05.propertyEditorBean.CustomPropertyEditorRegistrar"/>
+    </util:list>
+
+    <bean id="builtInSample" class="chapter4.ex05.propertyEditorBean.PropertyEditorBean">
+        <property name="bytes" value="Hello world"/>
+        <property name="cls" value="java.lang.String"/>
+        <property name="trueOrFalse" value="true"/>
+        <property name="stringList" ref="stringList"/>
+        <property name="floatValue" value="123.4567"/>
+        <property name="date" value="10-10-1997"/>
+        <property name="file" value="#{systemProperties['java.io.tmpdir']}
+                                    #{systemProperties['file.separator']}test.txt"/>
+        <property name="locale" value="en_US"/>
+        <property name="pattern" value="a*b"/>
+        <property name="properties" value="name=Chris age=32"/>
+        <property name="trimString" value="  String needs trimming   "/>
+        <property name="url" value="http://www.springframework.org"/>
+
+    </bean>
+
+    <util:list id="stringList">
+        <value>String member l</value>
+        <value>String member 2</value>
+    </util:list>
+</beans>
