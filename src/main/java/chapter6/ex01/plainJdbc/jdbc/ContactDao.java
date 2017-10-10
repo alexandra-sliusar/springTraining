@@ -1,6 +1,6 @@
-package chapter6.jdbc;
+package chapter6.ex01.plainJdbc.jdbc;
 
-import chapter6.Contact;
+import chapter6.ex01.plainJdbc.Contact;
 
 import java.util.List;
 

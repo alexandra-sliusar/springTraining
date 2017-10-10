@@ -1,4 +1,4 @@
-package chapter6;
+package chapter6.ex01.plainJdbc;
 
 import java.io.Serializable;
 import java.sql.Date;
