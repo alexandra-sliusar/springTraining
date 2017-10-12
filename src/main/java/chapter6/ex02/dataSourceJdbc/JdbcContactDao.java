@@ -1,10 +1,12 @@
 package chapter6.ex02.dataSourceJdbc;
 
+import chapter6.ex01.plainJdbc.Contact;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
+import java.util.List;
 
 /**
  * Created by Oleksandra_Sliusar on 10-Oct-17.
@@ -28,6 +30,16 @@ public class JdbcContactDao implements ContactDao, InitializingBean {
     public String findLastNameById(Long id) {
         return jdbcTemplate.queryForObject("select first_name from Contact where id = ?",
                 new Object[]{id}, String.class);
+    }
+
+    @Override
+    public List<Contact> findAll() {
+        return null;
+    }
+
+    @Override
+    public List<Contact> findAllWithDetail() {
+        return null;
     }
 
     @Override
