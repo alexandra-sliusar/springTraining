@@ -18,8 +18,10 @@ public class Runner {
         ContactDao contactDao = context.getBean("contactDao", ContactDao.class);
         /*List<Contact> contacts = contactDao.findAll();
         listContacts(contacts);*/
-        List<Contact> contacts = contactDao.findByFirstName("Chris");
-        listContacts(contacts);
+        /*List<Contact> contacts = contactDao.findByFirstName("Chris");
+        listContacts(contacts);*/
+        System.out.println(contactDao.findFirstNameById(7L));
+        //listContacts(contactDao.findAllWithDetail());
     }
 
     private static void listContacts(List<Contact> contacts) {
